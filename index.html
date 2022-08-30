@@ -15,28 +15,6 @@
   
   <div id="app"></div>
 
-  <script>
-    const routes = {
-      "/about": "/stage_06/exercicio_01/pages/about.html",
-      "/": "/stage_06/exercicio_01/pages/home.html",
-      "/contact": "/stage_06/exercicio_01/pages/contact.html",
-      404: "/stage_06/exercicio_01/pages/404.html"
-    }
-    function route(event){
-      event = event || window.event
-      event.preventDefault()
-
-      window.history.pushState({}, "", event.target.href)
-      handle()
-    }
-    function handle(){
-      const {pathname} = window.location // ele acha o pathname dentro do window.location (desestrutrar)
-      const route = routes[pathname] || routes[404]
-      fetch(route)
-      .then(data => data.text())
-      .then(html => console.log(html))
-      console.log(route)
-    }
-  </script>
+  <script src="./js/index.js" type="module"></script>
 </body>
 </html>
